@@ -1,25 +1,255 @@
-/* --- CSS Reset and Global Variables --- */
+/* ==========================================================
+   CSS Reset & Design Tokens
+========================================================== */
+
 :root {
-  /* Colors from Style Guide */
+  /* Colors */
   --white: hsl(0, 0%, 100%);
-  
+
   --stone-100: hsl(30, 54%, 90%);
   --stone-150: hsl(30, 18%, 87%);
   --stone-600: hsl(30, 10%, 34%);
   --stone-900: hsl(24, 5%, 18%);
-  
+
   --brown-800: hsl(14, 45%, 36%);
-  
-  --rose-800: hsl(332, 51%, 32%);
+
   --rose-50: hsl(330, 100%, 98%);
-  
-  /* Typography rules from Style Guide */
-  --font-young-serif: 'Young Serif', Georgia, serif;
-  --font-outfit: 'Outfit', Arial, sans-serif;
+  --rose-800: hsl(332, 51%, 32%);
+
+  /* Typography */
+  --font-heading: "Young Serif", Georgia, serif;
+  --font-body: "Outfit", Arial, sans-serif;
+
+  /* Spacing */
+  --space-100: 0.5rem;
+  --space-200: 1rem;
+  --space-300: 1.5rem;
+  --space-400: 2rem;
+  --space-500: 2.5rem;
+  --space-600: 3rem;
+
+  /* Border Radius */
+  --radius-sm: 0.75rem;
+  --radius-lg: 1.5rem;
 }
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+p,
+ul,
+ol,
+figure {
   margin: 0;
+}
+
+ul,
+ol {
   padding: 0;
+}
+
+/* ==========================================================
+   Base Styles
+========================================================== */
+
+body {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+  font-weight: 400;
+  color: var(--stone-600);
+  background: var(--stone-100);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  min-height: 100vh;
+  padding: 7.5rem 0;
+}
+
+/* ==========================================================
+   Card Layout
+========================================================== */
+
+.recipe-card {
+  width: 100%;
+  max-width: 46rem;
+
+  background: var(--white);
+
+  border-radius: var(--radius-lg);
+
+  padding: var(--space-500);
+}
+
+.recipe-header {
+  margin-bottom: var(--space-500);
+}
+
+.recipe-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-sm);
+}
+
+/* ==========================================================
+   Typography
+========================================================== */
+
+.recipe-title {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  line-height: 1.1;
+  font-weight: 400;
+  color: var(--stone-900);
+
+  margin-bottom: var(--space-300);
+}
+
+.recipe-description {
+  margin-bottom: var(--space-400);
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  line-height: 1.2;
+  font-weight: 400;
+  color: var(--brown-800);
+
+  margin-bottom: var(--space-300);
+}
+
+/* ==========================================================
+   Preparation Box
+========================================================== */
+
+.prep-time-box {
+  background: var(--rose-50);
+
+  border-radius: var(--radius-sm);
+
+  padding: var(--space-300) 1.75rem;
+
+  margin-bottom: var(--space-400);
+}
+
+.prep-title {
+  color: var(--rose-800);
+  font-size: 1.25rem;
+  font-weight: 700;
+
+  margin-bottom: var(--space-200);
+}
+
+/* ==========================================================
+   Lists
+========================================================== */
+
+.prep-list,
+.ingredients-list,
+.instructions-list {
+  padding-left: 1.5rem;
+}
+
+.prep-list li,
+.ingredients-list li,
+.instructions-list li {
+  margin-bottom: 0.75rem;
+  padding-left: var(--space-100);
+}
+
+.prep-list li:last-child,
+.ingredients-list li:last-child,
+.instructions-list li:last-child {
+  margin-bottom: 0;
+}
+
+.prep-list li::marker {
+  color: var(--rose-800);
+}
+
+.ingredients-list li::marker {
+  color: var(--brown-800);
+}
+
+.instructions-list li::marker {
+  color: var(--brown-800);
+  font-weight: 700;
+}
+
+/* ==========================================================
+   Sections
+========================================================== */
+
+.recipe-section {
+  margin-bottom: var(--space-400);
+}
+
+.section-divider {
+  border: 0;
+  border-top: 1px solid var(--stone-150);
+
+  margin: var(--space-400) 0;
+}
+
+/* ==========================================================
+   Nutrition Table
+========================================================== */
+
+.nutrition-description {
+  margin-bottom: var(--space-300);
+}
+
+.nutrition-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.nutrition-table tr {
+  border-bottom: 1px solid var(--stone-150);
+}
+
+.nutrition-table tr:last-child {
+  border-bottom: none;
+}
+
+.nutrition-table th,
+.nutrition-table td {
+  padding: 0.75rem 0;
+  text-align: left;
+}
+
+.nutrition-table th {
+  width: 50%;
+  padding-left: var(--space-400);
+
+  font-weight: 400;
+  color: var(--stone-600);
+}
+
+.nutrition-table td {
+  font-weight: 700;
+  color: var(--brown-800);
+}
+
+/* ==========================================================
+   Attribution
+========================================================== */
+
+.attribution {
+  font-size: 0.6875rem;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
 }
