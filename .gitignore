@@ -1,0 +1,29 @@
+# Design files
+*.fig
+*.sketch
+*.xd
+
+# macOS
+.DS_Store
+
+# Visual Studio Code
+.vscode/
+
+# JetBrains IDEs
+.idea/
+
+# Node.js
+node_modules/
+
+# Environment variables
+.env
+.env.local
+
+# Logs
+*.log
+
+# OS generated files
+Thumbs.db
+
+# Prettier
+.prettierignore
